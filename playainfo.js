@@ -8,6 +8,12 @@ if (Meteor.isClient) {
 		return Events.find({}, {sort: {start: -1}});
 	}
   });
+
+  Template.test.helpers({
+    events: function() {
+    return Events.find({}, {sort: {start: -1}});
+  }
+  });
   
   Template.body.events({
     "submit .new-event": function (event) {
